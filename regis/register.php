@@ -8,11 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm_password'];
 
-    // Validasi input
+    // MEMVALIDASI INPUTAN 
     if ($password !== $confirmPassword) {
         $error = 'Password dan konfirmasi password tidak cocok!';
     } else {
-        // Cek apakah username atau email sudah ada
+        //MELIHAT APAKAH EMAIL YANG DI INPUTKAN TERSEDIA ATAU TIDAK DI DB
         $stmt = $pdo->prepare('SELECT * FROM users WHERE username = :username OR email = :email');
         $stmt->execute(['username' => $username, 'email' => $email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($user) {
             $error = 'Username atau email sudah terdaftar!';
         } else {
-            // Insert user ke database tanpa hashing password
+            // INSERT USER
             $stmt = $pdo->prepare('INSERT INTO users (username, password, email) VALUES (:username, :password, :email)');
             $stmt->execute(['username' => $username, 'password' => $password, 'email' => $email]);
             header('Location: login.php');

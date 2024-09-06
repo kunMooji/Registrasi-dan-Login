@@ -13,6 +13,33 @@
 </head>
 <body>
 
+    <!-- Navigasi Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="dashboard.php">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="diet_plan.php">Rencana Diet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="notifications.php">Notifikasi Pengingat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="exercise.php">Saran Gerakan Olahraga</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profil.php">Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container mt-5">
         <h1 class="text-center mb-4">Dashboard</h1>
 
@@ -58,7 +85,7 @@
                 </div>
             </div>
 
-            <!-- Rencana Diet -->
+            <!-- Fitur-fitur -->
             <div class="col-md-4 mb-4">
                 <div class="feature-card">
                     <h5 class="card-title">Rencana Diet</h5>
@@ -67,7 +94,14 @@
                 </div>
             </div>
 
-            <!-- Notifikasi Pengingat -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <h5 class="card-title">Artikel Kebugaran</h5>
+                    <p class="card-text">Beberapa artikel kebugaran sebagai referensi penunjang kesuksesan diet anda.</p>
+                    <a href="artikel.php" class="btn btn-primary">Lihat Artikel</a>
+                </div>
+            </div>
+
             <div class="col-md-4 mb-4">
                 <div class="feature-card">
                     <h5 class="card-title">Notifikasi Pengingat</h5>
@@ -75,8 +109,7 @@
                     <a href="notifications.php" class="btn btn-primary">Atur Pengingat</a>
                 </div>
             </div>
-
-            <!-- Saran Gerakan Olahraga -->
+            
             <div class="col-md-4 mb-4">
                 <div class="feature-card">
                     <h5 class="card-title">Saran Gerakan Olahraga</h5>
@@ -85,15 +118,25 @@
                 </div>
             </div>
 
+            <!-- Button to trigger calculator modal -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <h5 class="card-title">Kalkulator Harian</h5>
+                    <p class="card-text">Hitung kebutuhan kalori harian Anda dengan kalkulator ini.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#calculatorModal">
+                        Buka Kalkulator
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Link ke jQuery, Popper.js, dan Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Link ke file JS di folder js -->
-    <script src="js/scripts.js"></script> <!-- Mengarahkan ke scripts.js dalam folder 'js' -->
+    <script src="js/scripts.js"></script>
 </body>
 </html>
